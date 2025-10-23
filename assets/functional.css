@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #0b2545;
+  --color-secondary: #bd9d6c;
+  --color-text-dark: #333;
+  --color-text-medium: #444;
+  --color-text-light: #9ca3af;
+  --color-background-body: #f8fafc;
+  --color-background-header: #ffffff;
+}
+.body-section {
+  margin-top: 50px;
+}
+.title-functional h1 {
+  border-bottom: 3px solid var(--color-primary-dark);
+  width: fit-content;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+.decision-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: var(--color-background-body);
+  border: 1px solid var(--color-primary-dark);
+}
+
+.decision-table th,
+.decision-table td {
+  padding: 12px;
+  text-align: right;
+  font-size: 14px;
+  border: 1px solid var(--color-secondary);
+}
+
+.decision-table th {
+  background-color: var(--color-primary-dark);
+  color: white;
+}
+
+.decision-table td a {
+  color: #8b4513;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.decision-table td a:hover {
+  text-decoration: underline;
+  color: green;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (max-width: 768px) {
+  .decision-table th,
+  .decision-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .title-functional h1 {
+    font-size: 22px;
+  }
+}

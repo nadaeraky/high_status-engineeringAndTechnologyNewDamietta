@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* Colors */
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #0b2545;
+  --color-secondary: #bd9d6c;
+  --color-text-dark: #333;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  padding: 40px 20px;
+  background-color: var(--color-background-body, #f4f4f9);
+}
+
+.body-section {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.body-section h1 {
+  border-bottom: 4px solid var(--color-secondary);
+  width: fit-content;
+  padding: 10px;
+  color: var(--color-primary-dark);
+  margin: 0 auto 40px auto;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+.body-section h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--color-primary);
+  margin-bottom: 25px;
+  text-align: right;
+  border-right: 3px solid var(--color-primary);
+  padding-right: 15px;
+}
+
+dl {
+  margin-bottom: 20px;
+  padding: 15px 0;
+}
+
+dt {
+  font-weight: 700;
+  margin-top: 20px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-secondary);
+  text-align: right;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 5px;
+}
+
+dd {
+  margin-right: 30px;
+  margin-left: 0;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--color-text-dark);
+  padding: 8px 0;
+  text-align: justify;
+}
+.events-list dd:before {
+  content: "•";
+  color: var(--color-primary-dark);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-right: -1em;
+  margin-left: 10px;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .body-section {
+    padding: 20px;
+  }
+  .body-section h2 {
+    border-right: none;
+    padding-right: 0;
+    text-align: center;
+  }
+  .events-list dt {
+    text-align: right;
+  }
+  .events-list dd {
+    margin-right: 15px;
+  }
+}
